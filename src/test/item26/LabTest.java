@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LabTest {
 
-
     @Test
     public void 로타입사용시예외발생테스트() {
         final Collection monies = new ArrayList();
@@ -27,8 +26,6 @@ class LabTest {
         for (Object money : monies) {
             exception = assertThrows(ClassCastException.class, () -> {
                 try {
-//                    Franc franc = (Franc) money; // ClassCastException 첫번째 원소는 Dollar인데 Franc로 캐스팅? X
-//                    franc.times(5);
                     BigDecimal m = (BigDecimal) money;
                 } catch (ClassCastException e) {
                     throw e;
@@ -41,7 +38,6 @@ class LabTest {
 
         assertNotNull(exception);
         assertEquals(exception.getClass().getName(), ClassCastException.class.getName());
-//        assertEquals(exceptio);
     }
 
     @Test
