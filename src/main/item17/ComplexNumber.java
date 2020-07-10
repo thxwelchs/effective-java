@@ -17,20 +17,20 @@ public final class ComplexNumber {
     public static final ComplexNumber I = new ComplexNumber(0, 1);
 
     // 생성자는 불변식 설정이 모두 완료된, 초기화가 완벽히 끝난 상태의 객체를 생성해야 한다.
-    public ComplexNumber(double re, double im) {
-        this.re = re;
-        this.im = im;
-    }
-
-//     생성자 대신 정적팩토리 메소드로 제공할 수도 있다.
-//     private ComplexNumber(double re, double im) {
+//    public ComplexNumber(double re, double im) {
 //        this.re = re;
 //        this.im = im;
-//     }
-//
-//     public static ComplexNumber valueOf(double re, double im) {
-//        return new ComplexNumber(re, im);
-//     }
+//    }
+
+//     생성자 대신 정적팩토리 메소드로 제공할 수도 있다.
+     private ComplexNumber(double re, double im) {
+        this.re = re;
+        this.im = im;
+     }
+
+     public static ComplexNumber valueOf(double re, double im) {
+        return new ComplexNumber(re, im);
+     }
 
     // Accessor: 멤버 변수를 수정하지 않고 단순히 읽거나 출력하는 함수
     // Mutator: 멤버 변수의 값을 수정하는 함수
